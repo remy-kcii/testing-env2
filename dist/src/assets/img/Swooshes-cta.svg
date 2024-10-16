@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1418.58" height="195.953" viewBox="0 0 1418.58 195.953">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_326" data-name="Rectangle 326" width="1418.58" height="195.953" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_325" data-name="Rectangle 325" width="1418.582" height="195.953" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="Rectangle_323" data-name="Rectangle 323" width="1203.19" height="120.771" transform="translate(168.06 75.182)" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <rect id="Rectangle_324" data-name="Rectangle 324" width="1347.88" height="195.952" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Swooshes" opacity="0.21">
+    <g id="Group_417" data-name="Group 417" clip-path="url(#clip-path)">
+      <g id="Group_416" data-name="Group 416">
+        <g id="Group_415" data-name="Group 415" clip-path="url(#clip-path-2)">
+          <path id="Path_196" data-name="Path 196" d="M525.336,195.95v0l.046,0Z" fill="#226995"/>
+          <path id="Path_197" data-name="Path 197" d="M1371.253,115.1C1087.595,162,788.856,184.891,525.382,195.95h893.2Z" fill="#226995"/>
+          <g id="Group_411" data-name="Group 411" opacity="0.66" style="isolation: isolate">
+            <g id="Group_410" data-name="Group 410">
+              <g id="Group_409" data-name="Group 409" clip-path="url(#clip-path-3)">
+                <path id="Path_198" data-name="Path 198" d="M1347.884,75.182C959.409,151.476,535.225,183.76,168.06,195.953H525.34C788.827,184.894,1087.582,162,1371.254,115.1Z" fill="#226995"/>
+              </g>
+            </g>
+          </g>
+          <g id="Group_414" data-name="Group 414" opacity="0.33" style="isolation: isolate">
+            <g id="Group_413" data-name="Group 413">
+              <g id="Group_412" data-name="Group 412" clip-path="url(#clip-path-4)">
+                <path id="Path_199" data-name="Path 199" d="M1303.872,0C1025.908,96.449,507.041,180.232,0,195.952H168.059C535.228,183.757,959.408,151.475,1347.883,75.18Z" fill="#226995"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

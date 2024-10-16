@@ -1,0 +1,245 @@
+.main-nav {
+	flex: 1;
+	font-weight: 500;
+	@include clamp(font-size, 20, 12);
+
+	@include breakpoint(large down) {
+		display: none;
+
+		&.open {
+			.dropdown {
+				display: block;
+				position: absolute;
+				top: rem-calc(52);
+				width: 100%;
+			}
+
+			.hamburger-menu {
+				display: none;
+			}
+
+			.hamburger-close {
+				display: inline-block;
+			}
+		}
+	}
+
+	ul {
+		&.lvl-1 {
+			@include breakpoint(medium up) {
+				margin-left: auto;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+
+			@include breakpoint(small only) {
+				background-color: #EBEBEB;
+				padding-bottom: 1rem;
+				display: none;
+			}
+
+			li {
+
+				@include breakpoint(small only) {
+					display: block;
+				}
+
+				&.is-active {
+					background: #F9F9F9;
+
+					&:after {
+						content: '';
+						position: absolute;
+						z-index: 100;
+						left: 0;
+						bottom: -1px;
+						width: 100%;
+						height: rem-calc(1);
+						background-color: #F9F9F9;
+					}
+
+					@include breakpoint(small only) {
+						background-color: transparent;
+
+						&:after {
+							background-color: transparent;
+						}
+					}
+				}
+
+				> a {
+					@include clamp(letter-spacing, -0.25, -0.15);
+					display: flex;
+					align-items: center;
+				}
+
+				&.is-dropdown-submenu-parent {
+					> a {
+						&:after {
+							content: '';
+							background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11.414" height="7.121" viewBox="0 0 11.414 7.121"><path id="Path_12" data-name="Path 12" d="M5.354,6.768-.353,1.061,1.061-.354,5.354,3.939,9.647-.354l1.414,1.414Z" transform="translate(0.353 0.354)" fill="%23f40d26"/></svg>') no-repeat center;
+							background-size: 100%;
+							width: 12px;
+							height: 7px;
+							display: block;
+							border: none;
+							position: static;
+							margin-left: 10px;
+						}
+					}
+				}
+			}
+
+			a {
+				color: $white;
+				transition: color 0.3s;
+				padding: 10px 12px!important;
+
+				@include breakpoint(medium down) {
+					padding-bottom: rem-calc(6) !important;
+					padding-left: 0.4rem !important;
+					padding-right: 0.4rem !important;
+				}
+
+				@include breakpoint(small only) {
+					font-size: rem-calc(27);
+				}
+
+				&:hover {
+					color: $red;
+				}
+			}
+		}
+
+		&.lvl-2 {
+			// display: none;
+			text-align: left;
+			width: rem-calc(290);
+			background: #f9f9f9 !important;
+			// padding: 1rem 0;
+			border: none !important;
+			box-shadow: rem-calc(2) rem-calc(2) rem-calc(2) 0 #a3aaae;
+
+			@include breakpoint(small only) {
+				width: 100%;
+				min-width: auto;
+				position: relative;
+				top: 0 !important;
+				right: 0 !important;
+				left: 0 !important;
+				border: none;
+				background-color: #ebebeb;
+				padding-bottom: 0;
+			}
+
+			li {
+				display: inline-block;
+				// width: rem-calc(175);
+				text-align: left;
+				border-bottom: rem-calc(1) solid $middle-gray;
+				padding-left: 1rem;
+				right: 1rem;
+				transition: background 0.3s;
+				margin-bottom: 0;
+				padding-left: 0;
+				@include clamp(font-size, 18, 13);
+
+				&:first-child a {
+					padding-left: 1rem;
+				}
+
+				&:last-child {
+					border-bottom: none;
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+
+				&:hover {
+					background: #E1E1E1;
+
+					a {
+						color: $slate;
+					}
+				}
+
+				@include breakpoint(small only) {
+					display: block;
+					width: 100%;
+					margin-left: 1rem;
+					margin-bottom: 1rem;
+
+					img, p {
+						display: none;
+					}
+				}
+			}
+
+			h5 {
+				color: #ab0e1e;
+				margin-bottom: 0;
+			}
+
+			img {
+				margin-bottom: rem-calc(12);
+			}
+
+			p {
+				font-size: rem-calc(11);
+				font-weight: normal;
+			}
+
+			.link {
+				margin-bottom: 0;
+			}
+
+			a {
+				border: rem-calc(1) solid transparent;
+				color: #464646;
+				padding-left: 1rem !important;
+
+				&:hover {
+					// color: inherit;
+				}
+
+				@include breakpoint(small only) {
+					color: #555;
+					font-size: rem-calc(21);
+				}
+			}
+		}
+	}
+
+	.primary-nav {
+		margin-top: 25px;
+	}
+
+	.secondary-nav {
+		order: -1;
+		margin-left: auto;
+		margin-bottom: 0;
+		width: auto;
+
+		@include breakpoint(large down) {
+			display: none;
+		}
+
+		li {
+			list-style: none;
+			display: inline-block;
+			vertical-align: top;
+			margin-bottom: 0;
+
+			a {
+				color: rgba($white, .65);
+				@include clamp(font-size, 18, 13);
+				font-weight: 400;
+				@include clamp(letter-spacing, -0.25, -0.15);
+
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+}

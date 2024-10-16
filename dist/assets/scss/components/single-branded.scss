@@ -1,0 +1,31 @@
+body.single-branded {
+	background: #fff;
+
+	.main-bar {
+		background: #fff;
+
+		.logo {
+			background-image: url(../img/logo-single-branded.png);
+			background-size: rem-calc(230);
+			position: relative;
+			bottom: rem-calc(15);
+			width: rem-calc(230);
+
+			@include breakpoint(medium down) {
+				background-size: rem-calc(150);
+				bottom: rem-calc(8);
+				margin-left: rem-calc(4);
+			}
+
+			@include breakpoint(small only) {
+				bottom: rem-calc(15);
+			}
+		}
+	}
+
+	footer {
+		.bottom-row {
+			background-color: #ebebeb;
+		}
+	}
+}

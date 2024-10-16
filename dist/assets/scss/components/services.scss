@@ -1,0 +1,107 @@
+.section-services {
+	position: relative;
+	background: #F7F7F7;
+	overflow: hidden;
+	@include clamp(padding-top, 70);
+	@include clamp(padding-bottom, 70);
+
+	.bg {
+		position: absolute;
+		right: 0;
+		bottom: -10px;
+		width: 100%;
+		z-index: 1;
+		text-align: right;
+	}
+
+	.container {
+		position: relative;
+		z-index: 2;
+	}
+
+	h2 {
+		@include clamp(font-size, 68, 30);
+		font-weight: 500;
+		margin: 0;
+		color: $blue-dark;
+		@include clamp(letter-spacing, -2, -0.75);
+
+		@include breakpoint(medium down) {
+			margin-bottom: 20px;
+		}
+	}
+
+	.services-list {
+		.item {
+			background: $white;
+			display: flex;
+			align-items: center;
+			@include clamp(padding, 30, 20);
+
+			@include breakpoint(small only) {
+				flex-wrap: wrap;
+			}
+
+			+ .item {
+				@include clamp(margin-top, 20, 15);
+			}
+
+			&-img {
+				flex-shrink: 0;
+				flex-grow: 0;
+				@include clamp(flex-basis, 80, 52);
+				@include clamp(margin-right, 30, 16);
+			}
+
+			&-image {
+				flex-shrink: 0;
+				flex-grow: 0;
+				@include clamp(flex-basis, 120, 140);
+				@include clamp(margin-right, 30, 16);
+
+				@include breakpoint (medium up) {
+					@include clamp(margin-left, -30, -20);
+					@include clamp(margin-top, -30, -20);
+					@include clamp(margin-bottom, -30, -20);
+					flex: 0 0 160px;
+				}
+
+				.img-bg {
+					padding-bottom: 100%;
+				}
+			}
+
+			&-title {
+				flex: 0 0 30%;
+
+				h3 {
+					margin: 0;
+					font-weight: 500;
+					@include clamp(font-size, 40, 24);
+					@include clamp(letter-spacing, -1, -0.45);
+					color: $blue-dark;
+				}
+			}
+
+			&-text {
+				flex: 1;
+				color: rgba($blue-dark, .63);
+				@include clamp(font-size, 20, 14);
+				font-family: $font-secondary;
+
+				@include breakpoint(small only) {
+					flex: 0 0 100%;
+					margin-top: 15px;
+				}
+
+				p {
+					margin-bottom: 10px;
+				}
+
+				&--cta {
+					text-align: right;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,62 @@
+.section-cta1 {
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 55%,rgba(182,205,220,1) 100%);
+	position: relative;
+	@include clamp(padding-top, 150, 70);
+	@include clamp(padding-bottom, 150, 70);
+
+	&:after {
+		content: '';
+		width: 58%;
+		height: 100%;
+		background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.65) 17%,rgba(255,255,255,0.86) 45%,rgba(231,239,244,1) 63%,rgba(182,205,220,1) 100%);
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 2;
+	}
+	
+	.bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 75%;
+		height: 100%;
+		z-index: 1;
+
+		@include breakpoint (small only) {
+			width: 100%;
+		}
+
+		img {
+			@include breakpoint (small only) {
+				opacity: 0.35;
+			}
+		}
+	}
+
+	.text {
+		@include clamp(font-size, 24, 16);
+		font-family: $font-secondary;
+		margin-left: auto;
+		@include clamp(max-width, 542, 350);
+
+		h2 {
+			font-family: $font-primary;
+			font-weight: 500;
+			@include clamp(font-size, 74, 36);
+			@include clamp(letter-spacing, -2, -0.75);
+			color: $blue-dark-alt;
+			margin: 0 0 0.25em;
+			line-height: 1;
+		}
+	}
+
+	.button {
+		@include clamp(margin-top, 15, 10);
+	}
+
+	.container {
+		position: relative;
+		z-index: 3;
+	}
+}

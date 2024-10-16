@@ -1,0 +1,72 @@
+.hamburger-menu {
+	display: none;
+	text-decoration: none;
+
+	@include breakpoint(large down) {
+		display: inline-block;
+	}
+
+	.menu-button {
+		border-radius: 0;
+		position: relative;
+		display: block;
+		margin: 0;
+		color: $white;
+		font-size: rem-calc(24);
+		cursor: pointer;
+	}
+
+	.fa-times {
+		display: none;
+	}
+
+	.text {
+		display: none;
+	}
+
+	&[aria-expanded="true"] {
+		.fa-times {
+			display: block;
+		}
+
+		.fa-bars {
+			display: none;
+		}
+	}
+}
+
+.hamburger-close {
+	display: none;
+	width: rem-calc(50);
+	height: rem-calc(40);
+	background-color: #1B2630;
+
+	.close-button {
+		height: rem-calc(40);
+		width: rem-calc(20);
+		margin-top: rem-calc(3);
+
+		&:before, &:after {
+			position: relative;
+			display: block;
+			content: '';
+			width: rem-calc(22);
+			height: rem-calc(6);
+			background-color: $white;
+			border-radius: rem-calc(2);
+		}
+
+		&:before {
+			transform: rotate(-45deg);
+			top: rem-calc(6);
+		}
+
+		&:after {
+			transform: rotate(45deg)
+		}
+	}
+
+	.text {
+		display: none;
+	}
+}

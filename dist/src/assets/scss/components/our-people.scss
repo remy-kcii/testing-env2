@@ -1,0 +1,194 @@
+.section-our_people {
+	@include clamp(padding-top, 70);
+	@include clamp(padding-bottom, 70);
+
+	.block-filters {
+		@include breakpoint (large up) {
+			max-width: 398px;
+		}
+
+		@include breakpoint (medium down) {
+			margin-bottom: 50px;
+		}
+
+		.text {
+			margin-bottom: 35px;
+
+			h2 {
+				margin: 0 0 0.5em;
+				font-weight: 600;
+				@include clamp(font-size, 28, 21);
+				line-height: 1.1;
+			}
+		}
+
+		.form-item {
+			@include clamp(margin-bottom, 50, 30);
+
+			> label {
+				@include clamp(font-size, 26, 18);
+				font-weight: 500;
+			}
+
+			input[type="text"],
+			select {
+				border: 1px solid #CBCBCB;
+				background-color: $white;
+				@include border-radius(4px);
+				@include box-shadow(none);
+				height: 43px;
+				margin-bottom: 0;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+
+			select {
+				background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="45" height="41" viewBox="0 0 45 41"><g id="Group_440" data-name="Group 440" transform="translate(-352 -1)"><rect id="Rectangle_342" data-name="Rectangle 342" width="45" height="41" transform="translate(352 1)" fill="%23bf1329"/><path id="Polygon_1" data-name="Polygon 1" d="M5,0l5,6H0Z" transform="translate(380 25) rotate(180)" fill="%23fff"/></g></svg>');
+				background-size: 45px 41px;
+				background-position: right center;
+				padding-right: 55px;
+				background-origin: border-box;
+			}
+
+			&--field {
+				position: relative;
+
+				&:not(:first-child) {
+					margin-top: 10px;
+				}
+
+				button[type="submit"] {
+					width: 45px;
+					height: 41px;
+					background-color: #BF1329;
+					padding: 0;
+					border: none;
+					position: absolute;
+					right: 1px;
+					top: 1px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: $white;
+				}
+			}
+		}
+
+		.form-reset {
+			input {
+				display: inline-block;
+				background-color: #707070;
+				border: none;
+				color: $white;
+				text-transform: uppercase;
+				@include clamp(font-size, 20, 15);
+				font-weight: 500;
+				padding: 12px 25px;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.search-results-summary {
+		margin-bottom: 25px;
+		color: rgba($black, .5);
+		font-family: $font-secondary;
+
+		strong {
+			color: $black;
+
+			@include breakpoint (small only) {
+				display: block;
+			}
+		}
+	}
+
+	.people-list {
+		.item {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: $white;
+			color: #707070;
+			text-decoration: none;
+			@include clamp(font-size, 18, 14);
+			font-family: $font-secondary;
+
+			@include breakpoint (small only) {
+				flex-wrap: wrap;
+				padding-bottom: 10px;
+			}
+
+			&:nth-child(2n+1) {
+				background-color: rgba($light-gray-alt, .8);
+			}
+
+			&-img {
+				height: 90px;
+				flex-grow: 0;
+				flex-shrink: 0;
+				@include clamp(flex-basis, 172, 150);
+				-webkit-clip-path: polygon(0 0, 65% 0, 100% 100%, 0% 100%);
+				clip-path: polygon(0 0, 65% 0, 100% 100%, 0% 100%);
+				position: relative;
+
+				@include breakpoint (small only) {
+					flex: 0 0 100%;
+					height: 120px;
+				}
+
+				> span {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+
+					img {
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						left: 0;
+						top: 0;
+						object-position: center;
+						object-fit: cover;
+					}
+				}
+			}
+
+			&-name {
+				font-weight: 500;
+				color: $black;
+				flex: 0 0 20%;
+
+				@include breakpoint (small only) {
+					flex: 0 0 100%;
+					margin-top: 10px;
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+
+			&-location {
+				flex: 0 0 18%;
+
+				@include breakpoint (small only) {
+					flex: 0 0 100%;
+					margin-top: 10px;
+					padding-left: 15px;
+				}
+			}
+
+			&-position {
+				flex: 0 0 20%;
+				padding-right: 15px;
+
+				@include breakpoint (small only) {
+					flex: 0 0 100%;
+					margin-top: 10px;
+					padding-left: 15px;
+				}
+			}
+		}
+	}
+}

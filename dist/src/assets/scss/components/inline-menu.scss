@@ -1,0 +1,91 @@
+.section-inline_menu {
+	background: $blue-dark;
+	position: relative;
+	color: $white;
+
+	&.is-stuck {
+		margin-top: var(--bpt)!important;
+	}
+
+	.accordion-menu {
+		position: static;
+
+		> li {
+			margin-bottom: 0;
+			width: auto;
+
+			> a {
+				color: $white;
+				text-decoration: none;
+				font-weight: 500;
+				padding: 1.2rem 1rem;
+				display: flex;
+				align-items: center;
+			}
+
+			&.is-accordion-submenu-parent {
+				position: static;
+
+				> a {
+					&:after {
+						content: '';
+						background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="11.414" height="7.121" viewBox="0 0 11.414 7.121"><path id="Path_12" data-name="Path 12" d="M5.354,6.768-.353,1.061,1.061-.354,5.354,3.939,9.647-.354l1.414,1.414Z" transform="translate(0.353 0.354)" fill="%23f40d26"/></svg>') no-repeat center;
+						background-size: 100%;
+						width: 12px;
+						height: 7px;
+						display: block;
+						border: none;
+						position: static;
+						margin-left: 10px;
+					}
+				}
+
+				> .menu {
+					position: absolute;
+					left: 0;
+					top: 100%;
+					width: 100%;
+					z-index: 10;
+					background: $white;
+					@include box-shadow(0px 2px 6px rgba($black, .16));
+					padding-top: 15px;
+					padding-bottom: 15px;
+					@include clamp(padding-left, 75, 35);
+					@include clamp(padding-right, 75, 35);
+
+					@include breakpoint (medium up) {
+						display: flex;
+						justify-content: space-between;
+					}
+
+					@include breakpoint (small only) {
+						padding-left: 35px;
+						padding-right: 35px;
+					}
+
+					> li {
+						margin: 0;
+
+						@include breakpoint (medium up) {
+							flex: 0 0 24%;
+						}
+
+						+ li {
+							@include breakpoint (medium up) {
+								border-left: 1px solid $dark;
+							}
+
+							@include breakpoint (small only) {
+								border-top: 1px solid $dark;
+							}
+						}
+
+						a {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

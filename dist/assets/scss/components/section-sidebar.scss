@@ -1,0 +1,262 @@
+.section-sidebar {
+	background: $light-gray-alt;
+	overflow: hidden;
+
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+		max-width: 1920px;
+	}
+
+	.grid-main {
+		> .large-3 {
+			@include breakpoint(large up) {
+				width: 30%;
+			}
+		}
+
+		> .large-9 {
+			@include breakpoint(large up) {
+				width: 70%;
+			}
+		}
+	}
+
+	.main-column {
+		position: relative;
+		@include clamp(padding-right, 140, 35);
+		@include clamp(padding-left, 50, 35);
+		@include clamp(padding-top, 50, 35);
+		@include clamp(padding-bottom, 50, 35);
+
+		@include breakpoint(medium down) {
+			padding-left: 35px;
+			padding-right: 35px;
+		}
+
+		> .bg {
+			position: absolute;
+			text-align: right;
+			z-index: 1;
+			right: 0;
+			bottom: -10px;
+		}
+
+		&--content {
+			position: relative;
+			z-index: 2;
+			font-family: $font-secondary;
+			
+			> p {
+				&:first-of-type {
+					@include clamp(font-size, 20, 15);
+				}
+			}
+
+			> h2 {
+				color: $blue-dark;
+				@include clamp(font-size, 48, 30);
+				font-weight: 500;
+				letter-spacing: -0.035em;
+				margin-bottom: 0.5em;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+
+			> h3 {
+				color: $blue-dark;
+				@include clamp(font-size, 36, 24);
+				font-weight: 500;
+				letter-spacing: -0.035em;
+				margin-bottom: 0.5em;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+
+			hr {
+				border-top: 10px solid #D0D8DE;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+
+			figcaption {
+				font-size: inherit;
+				line-height: 1.5;
+				@include clamp(font-size, 20, 15);
+			}
+		}
+	}
+
+	.section-blocks {
+		@include clamp(font-size, 16, 14);
+
+		+ .section-blocks {
+			padding-top: 0;
+		}
+	}
+
+	.section-blocks4 {
+		.text {
+			@include breakpoint(large up) {
+				flex: 0 0 63%;
+			}
+
+			@include breakpoint(medium up) {
+				order: -1;
+			}
+		}
+
+		.image {
+			@include clamp(min-height, 380, 280);
+		}
+	}
+
+	.section-services {
+		background: none;
+	}
+}
+
+.main-column {
+	&-sub {
+		@include clamp(margin-left, -26, -15);
+		@include clamp(margin-right, -26, -15);
+
+		> .cell {
+			@include clamp(padding-left, 26, 15);
+			@include clamp(padding-right, 26, 15);
+		}
+	}
+
+	&-sidebar {
+		.widget {
+			+ .widget {
+				@include clamp(margin-top, 75, 45);
+			}
+
+			> h4 {
+				font-family: $base-font-condensed;
+				@include clamp(font-size, 28, 21);
+				font-weight: 500;
+				margin: 0 0 15px;
+				color: $blue-dark-alt;
+			}
+
+			&--footer {
+				text-align: right;
+				margin-top: 10px;
+
+				.button-link {
+					@include clamp(font-size, 16, 14);
+					text-transform: none;
+				}
+			}
+
+			&--team {
+				.item {
+					background-color: $white;
+
+					.image {
+						background: #CFD8DE;
+						border-bottom: 4px solid $red-alt3;
+					}
+
+					.text {
+						padding: 20px;
+
+						h4 {
+							@include clamp(font-size, 20, 18);
+							font-weight: 500;
+							letter-spacing: -0.025em;
+							margin: 0;
+						}
+					}
+
+					+ .item {
+						margin-top: 10px;
+					}
+				}
+			}
+
+			&--resources {
+				.item {
+					font-family: $font-secondary;
+
+					+ .item {
+						@include clamp(margin-top, 45);
+					}
+
+					h4 {
+						display: flex;
+						align-items: center;
+						margin: 0 0 15px;
+						color: #707070;
+						@include clamp(font-size, 16, 14);
+						font-weight: 700;
+						font-family: $font-secondary;
+
+						&:before {
+							content: '';
+							@include clamp(width, 32, 24);
+							@include clamp(height, 32, 24);
+							background-repeat: no-repeat;
+							background-position: center;
+							background-size: 100%;
+							opacity: 0.7;
+							margin-right: 12px;
+						}
+					}
+
+					&--tax {
+						h4 {
+							&:before {
+								background-image: url(../img/resource-tax.png);
+							}
+						}
+					}
+
+					&--whitepaper {
+						h4 {
+							&:before {
+								background-image: url(../img/resource-whitepaper.png);
+							}
+						}
+					}
+				}
+			}
+
+			&--news {
+				.section-blocks1 {
+					.item {
+						+ .item {
+							margin-top: 10px;
+						}
+
+						.image {
+							.img-bg {
+								height: 120px;
+							}
+						}
+
+						.text {
+							@include clamp(padding, 22, 20);
+							@include clamp(font-size, 15, 13);
+
+							p {
+								margin-bottom: 10px;
+							}
+
+							.button-link {
+								@include clamp(font-size, 16, 14);
+								text-transform: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

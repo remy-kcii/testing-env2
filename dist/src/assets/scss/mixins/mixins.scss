@@ -1,0 +1,88 @@
+@mixin box-shadow($string...) {
+    -webkit-box-shadow: $string;
+    -moz-box-shadow: $string;
+    box-shadow: $string;
+}
+
+@mixin border-radius($radius: 0px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transition ($transition...) {
+    -webkit-transition: $transition;  
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transform ($string...){
+    -webkit-transform: $string;
+    -moz-transform: $string;
+    -ms-transform: $string;
+    -o-transform: $string;
+    transform: $string;
+}
+
+@mixin animation ($string...){
+    -webkit-animation: $string;
+    -moz-animation: $string;
+    -ms-animation: $string;
+    -o-animation: $string;
+    animation: $string;
+}
+
+@mixin blur ($radius: 1px) {
+    -webkit-filter: blur($radius);
+    -moz-filter: blur($radius);
+    -o-filter: blur($radius);
+    -ms-filter: blur($radius);
+    filter: blur($radius);
+}
+
+@mixin icomoon() {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin outline($color: $black, $stroke: 1px) {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: $stroke;
+    -webkit-text-stroke-color: $color;
+}
+
+@mixin links ($link-color, $link-color-hover) {
+    a {
+        color: $link-color;
+        // text-decoration: underline;
+        
+        &:hover {
+            color: $link-color-hover;
+            // text-decoration: none;
+        }
+    }
+}
+
+@function is-important($important){
+    @return #{if($important, '!important', '')};
+}
+
+$design_width: 1920;
+@mixin clamp($property, $size, $min: $size/2, $important: false) {
+    $size-min: $min;
+    $size-vw: $size * 100 / $design_width;
+    @if ($size > 0) {
+        #{$property}: clamp(#{$min}px, #{$size-vw}vw, #{$size}px) is-important($important);
+    } @else {
+        #{$property}: clamp(#{$size}px, #{$size-vw}vw, #{$min}px) is-important($important);
+    }
+}

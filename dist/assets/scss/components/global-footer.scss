@@ -1,0 +1,216 @@
+.footer {
+	@include clamp(padding-top, 58, 25);
+	@include clamp(padding-bottom, 58, 25);
+	background: linear-gradient(to bottom,  rgba(22,45,67,1) 0%,rgba(19,38,57,1) 50%,rgba(4,9,13,1) 100%);
+	color: $white;
+	position: relative;
+	font-family: $font-secondary;
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 10%;
+		background: url(../.././dist/assets/img/Traingle-Grid-Image.png) no-repeat center;
+		background-size: cover;
+	}
+
+	.container {
+		position: relative;
+		z-index: 2;
+	}
+
+	&-door {
+		opacity: 0.51;
+		mix-blend-mode: screen;
+		margin-left: auto;
+		margin-right: auto;
+		@include clamp(margin-bottom, 40, 20);
+		@include clamp(max-width, 130, 80);
+	}
+
+	&-logo {
+		@include clamp(max-width, 278, 180);
+		@include clamp(margin-bottom, 35, 20);
+
+		@include breakpoint (medium only) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&-social {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		@include clamp(font-size, 50, 32);
+
+		@include breakpoint (medium only) {
+			justify-content: center;
+		}
+
+		li {
+			+ li {
+				@include clamp(margin-left, 20, 15);
+			}
+		}
+	}
+
+	&-columns {
+
+		h5,
+		.h5 {
+			@include clamp(font-size, 20, 16);
+			font-weight: 500;
+			color: $white;
+			text-transform: none;
+			margin: 0 0 5px;
+			font-family: $font-secondary;
+			letter-spacing: 0;
+
+			a {
+				color: $white;
+			}
+		}
+
+		div.cell {
+			@include breakpoint(medium only) {
+				margin-bottom: 35px;
+			}
+		}
+
+		.cell.large-3 {
+			@include breakpoint(large up) {
+				&:nth-child(1) {
+					max-width: 30%;
+					flex: 0 0 30%;
+				}
+
+				&:nth-child(4) {
+					max-width: 20%;
+					flex: 0 0 20%;
+				}
+			}
+
+			@include breakpoint(small only) {
+				margin-top: 35px;
+			}
+		}
+
+		ul {
+			margin-left: 0;
+			padding-left: 0;
+			margin-bottom: 0;
+
+			&.menu-2cols {
+				@include breakpoint(large up) {
+					column-count: 2;
+				}
+			}
+		}
+
+		nav {
+			ul {
+				margin: 0;
+
+				li {
+					&:not(.h5) {
+						a {
+							font-family: $base-font-condensed;
+							@include clamp(font-size, 20, 16);
+						}
+					}
+
+					&.h5 {
+						@include clamp(margin-top, 45, 30);
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		li {
+			list-style: none;
+			margin-bottom: 0;
+
+			a {
+				color: rgba($white, .55);
+				transition: all 0.3s;
+				text-decoration: none;
+
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+
+	.row.column {
+		padding: 0;
+	}
+
+	&-utility-menu {
+		margin-top: 30px;
+		@include clamp(font-size, 15, 12);
+		color: rgba($white, .55);
+
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			> li {
+				+ li {
+					&:before {
+						content: '|';
+						margin-left: 10px;
+						margin-right: 10px;
+					}
+
+					// &:nth-child(4n) {
+					// 	@include breakpoint(small medium) {
+					// 		&:before {
+					// 			content: '';
+					// 			display: block;
+					// 			margin: 0;
+					// 		}
+					// 	}
+					// }
+				}
+
+				a {
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+
+	&-copyright {
+		@include clamp(font-size, 15, 10);
+		@include clamp(letter-spacing, -0.25, -0.15);
+		color: rgba($white, .5);
+		@include clamp(margin-top, 75, 35);
+		clear: both;
+		text-align: center;
+		margin-bottom: 0;
+		font-weight: 400;
+		font-family: $font-secondary;
+
+		a {
+			color: inherit;
+			text-decoration: underline;
+		}
+	}
+}

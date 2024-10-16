@@ -1,0 +1,38 @@
+.section-team {
+	background-color: $light-gray-alt;
+	@include clamp(padding-top, 80, 50);
+	@include clamp(padding-bottom, 80, 50);
+
+	.grid-x {
+		margin-left: -7.5px;
+		margin-right: -7.5px;
+
+		> .cell {
+			padding: 7.5px;
+		}
+	}
+
+	.item {
+		background-color: $white;
+
+		.image {
+			background: #CFD8DE;
+			border-bottom: 4px solid $red-alt3;
+		}
+
+		.text {
+			padding: 20px;
+
+			h4 {
+				@include clamp(font-size, 20, 18);
+				font-weight: 500;
+				letter-spacing: -0.025em;
+				margin: 0 0 8px;
+			}
+		}
+	}
+
+	+ .section-blocks14 {
+		padding-top: 0;
+	}
+}

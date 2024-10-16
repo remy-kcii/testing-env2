@@ -1,0 +1,93 @@
+.section-cta2 {
+	background: $blue-dark;
+	color: $white;
+	position: relative;
+	@include clamp(padding-top, 150, 70);
+	@include clamp(padding-bottom, 150, 70);
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		@include clamp(width, 134);
+		@include clamp(height, 230);
+		-webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+		clip-path: polygon(0 0, 0% 100%, 100% 0);
+		position: absolute;
+		z-index: 3;
+		pointer-events: none;
+		left: 0;
+		top: 0;
+		background: $blue-dark-alt3;
+		opacity: 0.36;
+	}
+	
+	.bg {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 63%;
+		height: 100%;
+		z-index: 2;
+
+		@include breakpoint (medium up) {
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%);
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 100%);
+		}
+
+		@include breakpoint (small only) {
+			width: 100%;
+		}
+
+		img {
+			@include breakpoint (small only) {
+				opacity: 0.35;
+			}
+		}
+	}
+
+	.swooshes {
+		position: absolute;
+		right: 0;
+		bottom: -10px;
+		width: 100%;
+		z-index: 1;
+		pointer-events: none;
+
+		img {
+			@include transform(translateX(-18%));
+		}
+	}
+
+	.text {
+		@include clamp(font-size, 20, 14);
+		font-family: $font-secondary;
+		@include clamp(max-width, 572, 350);
+
+		h2 {
+			font-family: $font-primary;
+			font-weight: 500;
+			@include clamp(font-size, 86, 36);
+			@include clamp(letter-spacing, -2, -0.75);
+			margin: 0 0 0.25em;
+			line-height: 1;
+		}
+	}
+
+	.button {
+		@include clamp(margin-top, 15, 10);
+	}
+
+	.container {
+		position: relative;
+		z-index: 4;
+	}
+
+	&.light {
+		background-color: $white;
+		color: $blue-dark;
+
+		&:before {
+			opacity: 0.15;
+		}
+	}
+}

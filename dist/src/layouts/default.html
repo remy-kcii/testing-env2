@@ -1,0 +1,57 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Andersen</title>
+
+        <link rel="stylesheet" href="{{root}}./dist/assets/css/app.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="https://andersen.com/favicon.ico">
+    </head>
+
+    <body class="{{page}}">
+        <div class="off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+                <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-position="right">
+                    {{> mobile_menu}}
+                </div>
+
+                <div class="off-canvas-content" data-off-canvas-content>
+                    {{> global_header}}
+
+                    <div class="main-content">
+                        {{> body}}
+                    </div>
+
+                    {{> global_footer}}
+                </div>
+            </div>
+        </div>
+
+        <script src="{{root}}./dist/assets/js/app.js"></script>
+        <script type="text/javascript">
+            function parse_countries(data) {
+                var $menu = jQuery('.locations.dropdown .menu');
+                $menu.children().remove();
+
+                if(data && data.countries) {
+                    for(var i = 0; data.countries[i]; i++) {
+                        var country = data.countries[i];
+                        if (country.name != 'Andersen Global') {
+                            $menu.append('<li><a href="'+country.link+'" data-href="'+country.link+'" target="_blank">'+country.name+'</a></li>');
+                        }
+                    }
+                }
+            }
+        </script>
+        <script src="https://global.andersen.com/./dist/assets/member-firms/src/./dist/assets/js/countries.js"></script>
+        <script src="https://andersen.com/offices/reach-data"></script>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+.pagination {
+	background: $light-gray-alt;
+	@include clamp(padding, 30, 15);
+	margin: 0;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+	> li {
+		margin-bottom: 0;
+		margin-left: 3px;
+		margin-right: 3px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&.pagination-next {
+			text-indent: -9999px;
+			font-size: 0px;
+
+			> a {
+				&:after {
+					content: '';
+					margin: 0;
+					width: 8px;
+					height: 13px;
+					background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="7.943" height="13.058" viewBox="0 0 7.943 13.058"><path id="Path_229" data-name="Path 229" d="M5.822,12.7-.707,6.175,5.822-.354,7.236,1.06,2.121,6.175,7.236,11.29Z" transform="translate(7.236 12.704) rotate(180)" fill="%23231f20"/></svg>') no-repeat center;
+					background-size: 100%;
+					display: block;
+				}
+			}
+
+			&.disabled {
+				&:after {
+					content: '';
+					margin: 0;
+					width: 8px;
+					height: 13px;
+					background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="7.943" height="13.058" viewBox="0 0 7.943 13.058"><path id="Path_229" data-name="Path 229" d="M5.822,12.7-.707,6.175,5.822-.354,7.236,1.06,2.121,6.175,7.236,11.29Z" transform="translate(7.236 12.704) rotate(180)" fill="%23231f20"/></svg>') no-repeat center;
+					background-size: 100%;
+					display: block;
+				}
+			}
+		}
+
+		&.pagination-previous {
+			text-indent: -9999px;
+			font-size: 0px;
+
+			> a {
+				&:before {
+					content: '';
+					margin: 0;
+					width: 8px;
+					height: 13px;
+					background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="7.943" height="13.058" viewBox="0 0 7.943 13.058"><path id="Path_227" data-name="Path 227" d="M5.822,12.7-.707,6.175,5.822-.354,7.236,1.06,2.121,6.175,7.236,11.29Z" transform="translate(0.707 0.354)" fill="%23231f20"/></svg>') no-repeat center;
+					background-size: 100%;
+					display: block;
+				}
+			}
+
+			&.disabled {
+				&:before {
+					content: '';
+					margin: 0;
+					width: 8px;
+					height: 13px;
+					background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="7.943" height="13.058" viewBox="0 0 7.943 13.058"><path id="Path_227" data-name="Path 227" d="M5.822,12.7-.707,6.175,5.822-.354,7.236,1.06,2.121,6.175,7.236,11.29Z" transform="translate(0.707 0.354)" fill="%23231f20"/></svg>') no-repeat center;
+					background-size: 100%;
+					display: block;
+				}
+			}
+		}
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		color: #04090D;
+		background: $white;
+		border: 1px solid #CFD8DE;
+		@include clamp(width, 32, 25);
+		@include clamp(height, 32, 25);
+		padding: 0;
+	}
+
+	.current {
+		background: $red-alt3;
+		border-color: $red-alt;
+		color: $white;
+		font-weight: 500;
+		@include clamp(width, 32, 25);
+		@include clamp(height, 32, 25);
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

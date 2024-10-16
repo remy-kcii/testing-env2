@@ -1,0 +1,31 @@
+.breadcrumbs {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	text-align: left;
+	@include clamp(font-size, 12, 10);
+	display: flex;
+	flex-wrap: wrap;
+	font-family: $font-secondary;
+	font-weight: 500;
+
+	.crumb {
+		&:not(:last-child) {
+			&:after {
+				content: '/';
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+		}
+
+		&.truncated {
+			display: none;
+		}
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	.current {
+	}
+}

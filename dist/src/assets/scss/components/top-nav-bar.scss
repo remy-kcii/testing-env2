@@ -1,0 +1,161 @@
+.top-nav-bar {
+	background: $black;
+	padding-top: rem-calc(6);
+	padding-bottom: rem-calc(6);
+	@include clamp(font-size, 16, 12);
+	font-weight: 500;
+
+	> .grid-x {
+		max-width: 100%;
+		@include clamp(padding-left, 50, 35);
+		@include clamp(padding-right, 50, 35);
+
+		> .cell {
+			@include breakpoint(medium up) {
+				flex: 0 0 auto;
+				width: auto;
+			}
+		}
+	}
+
+	.no-padding {
+		padding-left: 0;
+	}
+
+	.global-link {
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+
+		a {
+			color: $white;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+
+			&:before {
+				content: '';
+				width: 16px;
+				height: 16px;
+				flex: 0 0 16px;
+				margin-right: 7px;
+				background: url(../.././dist/assets/img/globe_blue.png) no-repeat center;
+				background-size: 100%;
+			}
+
+			.fa {
+				display: none;
+			}
+		}
+	}
+
+	.top-nav {
+
+		.location-label {
+			margin: 0 6px 0 0;
+			opacity: 0.65;
+
+			@include breakpoint(small only) {
+				display: none;
+			}
+		}
+
+		.locations {
+			background: rgba($white, .95);
+			@include border-radius(3px);
+
+			> li {
+				> a {
+					color: rgba($black, .85);
+					padding-right: 2.5rem;
+
+					&:after {
+						border: none;
+						background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14.088" height="8.458" viewBox="0 0 14.088 8.458"><path id="Path_12" data-name="Path 12" d="M6.691,8.1-.353,1.061,1.061-.354l5.63,5.63,5.63-5.63,1.414,1.414Z" transform="translate(0.353 0.354)" opacity="0.85"/></svg>') no-repeat center;
+						background-size: 100%;
+						width: 14px;
+						height: 8px;
+						right: 1rem;
+					}
+				}
+			}
+
+			.menu {
+				@include shadow;
+				min-width: 0;
+				width: rem-calc(132);
+				background: $light-gray;
+				border: none;
+				z-index: 999999;
+				width: 100%;
+				@include clamp(max-height, 450, 320);
+				overflow: auto;
+				-webkit-overflow-scrolling: touch;
+
+				li {
+					text-align: left;
+					font-size: rem-calc(12);
+					margin-bottom: 0;
+
+					@include breakpoint(small only) {
+						font-size: rem-calc(12);
+					}
+
+					&:first-child a {
+						padding-top: 0.7rem;
+					}
+
+					a {
+						color: $slate;
+						font-weight: bold;
+						padding-top: 0;
+
+						&:hover {
+							color: #a3aaae;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.language-nav {
+		display: flex;
+		align-items: center;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		@include clamp(margin-right, 35, 20);
+
+		@include breakpoint(small only) {
+			margin-right: auto;
+		}
+
+		li {
+			+ li {
+				// margin-left: 4px;
+			}
+		}
+
+		a {
+			color: rgba($white, .65);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			@include clamp(width, 42, 32);
+			@include clamp(height, 30, 24);
+			@include border-radius(3px);
+			text-decoration: none;
+
+			&:hover {
+				color: $white;
+			}
+
+			&.selected {
+				color: $white;
+				background-color: $red-alt;
+			}
+		}
+	}
+}

@@ -1,0 +1,142 @@
+.social-links {
+	display: inline-block;
+	vertical-align: top;
+	background-color: transparent;
+	margin-left: rem-calc(18);
+	margin-bottom: 0;
+	margin-left: 0;
+	text-align: right;
+
+	@include breakpoint(medium down) {
+		margin-top: 1rem;
+	}
+
+	@include breakpoint(small only) {
+		// margin-top: rem-calc(-8);
+	}
+
+	.share-label {
+		display: block;
+
+		@include breakpoint(small only) {
+			margin-bottom: rem-calc(8);
+		}
+	}
+
+	.share-label {
+		display: inline-block;
+		width: auto;
+		font-size: rem-calc(12);
+	}
+
+	li {
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 0.5rem;
+		font-size: rem-calc(12);
+		list-style: none;
+		margin-top: rem-calc(4);
+		margin-bottom: 0;
+		width: 1rem;
+
+		a {
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			width: rem-calc(16);
+			height: rem-calc(16);
+			margin-top: rem-calc(3);
+		}
+
+		&.facebook a {
+			background: url(../.././dist/assets/img/social-icons/facebook.png) no-repeat;
+		}
+
+		&.twitter a {
+			background: url(../.././dist/assets/img/social-icons/twitter.png) no-repeat;
+		}
+
+		&.linkedin a {
+			background: url(../.././dist/assets/img/social-icons/linkedin.png) no-repeat;
+		}
+
+		&.email a {
+			background: url(../.././dist/assets/img/social-icons/email.png) no-repeat;
+		}
+
+		&.print a {
+			background: url(../.././dist/assets/img/social-icons/print.png) no-repeat;
+		}
+	}
+
+	&.inner {
+		float: right;
+
+		.facebook a {
+			background: url(../.././dist/assets/img/social-icons/dark/facebook.png) no-repeat;
+		}
+
+		.twitter a {
+			background: url(../.././dist/assets/img/social-icons/dark/twitter.png) no-repeat;
+		}
+
+		.linkedin a {
+			background: url(../.././dist/assets/img/social-icons/dark/linkedin.png) no-repeat;
+		}
+
+		.email a {
+			background: url(../.././dist/assets/img/social-icons/dark/email.png) no-repeat;
+		}
+
+		.print a {
+			background: url(../.././dist/assets/img/social-icons/dark/print.png) no-repeat;
+		}
+	}
+
+	&.social-hero {
+		@include breakpoint(small only) {
+			float: left;
+			width: 100%;
+			position: relative;
+			bottom: 1rem;
+			text-align: left;
+		}
+
+		.icon {
+			color: #fff;
+		}
+
+		a {
+			color: #fff;
+		}
+
+		.fa-print, .fa-envelope {
+			color: #4E668A;
+		}
+	}
+
+	.fa-stack {
+		vertical-align: top !important;
+		transform: scale(0.5);
+		top: rem-calc(-6) !important;
+	}
+
+	.icon {
+		font-size: rem-calc(36);
+		color: $red;
+		position: relative;
+		top: rem-calc(8);
+		margin-right: rem-calc(4);
+
+		&.fa-print, &.fa-envelope {
+			color: #fff;
+		}
+	}
+
+	a {
+		color: $slate;
+		display: block;
+		height: 100%;
+		text-decoration: none;
+	}
+}

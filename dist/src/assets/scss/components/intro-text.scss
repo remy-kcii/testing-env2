@@ -1,0 +1,26 @@
+.section-intro_text {
+	text-align: center;
+	@include clamp(padding-top, 75, 30);
+	@include clamp(padding-bottom, 75, 30);
+	@include clamp(font-size, 28, 16);
+	color: $blue-dark;
+	letter-spacing: -0.05em;
+	font-weight: 500;
+	font-style: italic;
+
+	.text {
+		@include clamp(max-width, 1368, 720);
+		margin-left: auto;
+		margin-right: auto;
+
+		h2 {
+			font-family: $font-primary;
+			font-weight: 500;
+			@include clamp(font-size, 74, 36);
+			@include clamp(letter-spacing, -2, -0.75);
+			color: $blue-dark-alt;
+			margin: 0 0 0.25em;
+			line-height: 1;
+		}
+	}
+}

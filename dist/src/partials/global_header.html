@@ -1,0 +1,111 @@
+<header class="navbar" data-margin-top='0' data-sticky data-off-canvas-sticky>
+	<div class="top-nav-bar">
+		<div class="grid-x align-justify align-middle large-collapse">
+			<div class="global-link cell flex-child-auto">
+				<a href="https://global.andersen.com" target="_blank">Andersen Global</a>
+			</div>
+
+			<nav class="top-nav cell grid-x align-middle">
+				<ul class="language-nav">
+					<li><a href="#">DE</a></li>
+					<li><a href="#" class="selected">EN</a></li>
+					<li><a href="#">FR</a></li>
+				</ul>
+				<p class="location-label">Worldwide Locations:</p>
+				<ul class="locations dropdown menu" data-dropdown-menu>
+					<li>
+						<a href="#" class="selected"><span class="inner">United States</span></a>
+
+						<ul class="menu">
+							<li><a href="#">Brazil</a></li>
+							<li><a href="#">Canada*</a></li>
+							<li><a href="#">Chile</a></li>
+							<li><a href="#">France</a></li>
+							<li><a href="#">Germany</a></li>
+							<li><a href="#">Guatemala</a></li>
+							<li><a href="#">Ireland*</a></li>
+							<li><a href="#">Italy</a></li>
+							<li><a href="#">Luxembourg</a></li>
+							<li><a href="#">Mexico</a></li>
+							<li><a href="#">Netherlands</a></li>
+							<li><a href="#">Panama</a></li>
+							<li><a href="#">Poland</a></li>
+							<li><a href="#">Russia</a></li>
+							<li><a href="#">Spain</a></li>
+							<li><a href="#">Switzerland</a></li>
+							<li><a href="#">United States</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div class="main-bar">
+		<div class="grid-x align-justify align-middle large-collapse">
+			<div class="logo"><a href="index.html"><img src="./dist/assets/img/logo@2x.png" alt="logo" width="260" height="78"></a></div>
+
+			<a href="javascript:;" class="hamburger-menu" data-toggle="offCanvas">
+				<span class="menu-button">
+					<span class="fa fa-bars" aria-hidden="true"></span>
+					<span class="fa fa-times" aria-hidden="true"></span>
+				</span>
+			</a>
+
+			<nav class="main-nav">
+				<div class="grid-x large-collapse">
+					<div class="search cell">
+						<form method="get">
+							<input type="text" name="q" value="" placeholder="Search" class="q" />
+							<button type="submit"><img src="./dist/assets/img/search.svg" alt="search"></button>
+						</form>
+					</div>
+					<div class="cell secondary-nav">
+						<ul class="menu">
+							<li><a href="#">Sub Item 1</a></li>
+							<li><a href="#">Sub Item 2</a></li>
+							<li><a href="#">Sub Item 3</a></li>
+							<li><a href="#">Sub Item 4</a></li>
+							<li><a href="#">Sub Item 5</a></li>
+							<li><a href="#">Sub Item 6</a></li>
+						</ul>
+					</div>
+					<div class="cell primary-nav small-12">
+						<ul class="lvl-1 dropdown menu" data-dropdown-menu>
+							<li class="item-1">
+								<a href="landing.html">Main Item 1</a>
+								{{> global_header_subnav }}
+							</li>
+							<li class="item-2">
+								<a href="landing.html">Main Item 2</a>
+								{{> global_header_subnav }}
+							</li>
+							<li class="item-3">
+								<a href="our-people.html">Professionals</a>
+								{{> global_header_subnav }}
+							</li>
+							<li class="item-4">
+								<a href="#">Main Item 4</a>
+								{{> global_header_subnav }}
+							</li>
+							<li class="item-5">
+								<a href="#">Main Item 5</a>
+								{{> global_header_subnav }}
+							</li>
+							<li class="item-6">
+								<a href="#">Main Item 6</a>
+								{{> global_header_subnav }}
+							</li>
+							<li class="item-8">
+								<a href="locations.html">Offices</a>
+							</li>
+							<li class="item-8">
+								<a href="global-presence.html">Global Presence</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+
+		</div>
+	</div>
+</header>

@@ -1,0 +1,49 @@
+.button {
+	@include clamp(font-size, 24, 16);
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: $font-primary;
+	text-decoration: none!important;
+	transition: all 0.3s;
+	color: $white!important;
+	background: $red-alt2;
+	@include clamp(letter-spacing, -0.35, -0.15);
+	margin-bottom: 0;
+	line-height: 30px;
+	@include clamp(padding-top, 17, 10);
+	@include clamp(padding-bottom, 17, 10);
+	@include clamp(padding-left, 34, 20);
+	@include clamp(padding-right, 66, 40);
+	position: relative;
+	border: none;
+
+	&:after {
+		content: '';
+		@include clamp(width, 34, 20);
+		height: 100%;
+		background: $black;
+		opacity: 0.27;
+		position: absolute;
+		right: 0;
+		top: 0;
+		clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+		-webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+	}
+
+	&:hover {
+		background-color: $dark-red;
+	}
+}
+
+.button-link {
+	@include clamp(font-size, 20, 15);
+	font-weight: 600;
+	text-transform: uppercase;
+	text-decoration: none!important;
+	color: $red-alt3;
+	font-family: $font-primary;
+
+	&:hover {
+		color: $dark-red!important;
+	}
+}

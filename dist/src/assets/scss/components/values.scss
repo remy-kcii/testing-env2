@@ -1,0 +1,93 @@
+.section-core_values {
+	position: relative;
+	background: linear-gradient(to bottom,  rgba(22,45,67,1) 0%,rgba(34,105,149,1) 100%);
+	overflow: hidden;
+	@include clamp(padding-top, 100);
+	@include clamp(padding-bottom, 100);
+	color: $white;
+
+	.bg {
+		position: absolute;
+		right: 0;
+		bottom: -10px;
+		width: 100%;
+		z-index: 1;
+		text-align: right;
+	}
+
+	.container {
+		position: relative;
+		z-index: 2;
+	}
+
+	h2 {
+		@include clamp(font-size, 68, 30);
+		font-weight: 500;
+		margin: 0 0 20px;
+		@include clamp(letter-spacing, -2, -0.75);
+	}
+
+	.grid-x {
+		> .cell {
+			@include breakpoint(medium up) {
+				width: 50%;
+			}
+
+			@include breakpoint(large up) {
+				width: 33.3333%;
+			}
+
+			@include breakpoint(xlarge up) {
+				width: 20%;
+			}
+		}
+	}
+
+	.item {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		
+		&-title {
+			display: flex;
+			align-items: center;
+			position: relative;
+
+			&:before {
+				@include clamp(--w, 104, 65);
+				content: '';
+				position: absolute;
+				left: var(--w);
+				width: calc(100% - var(--w));
+				height: 100%;
+				background: linear-gradient(to right,  rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+				opacity: 0.3;
+				@include transform(skew(-23deg));
+			}
+
+			.img {
+				flex-shrink: 0;
+				flex-grow: 0;
+				@include clamp(flex-basis, 80, 52);
+				@include clamp(margin-right, 10, 5);
+				position: relative;
+				z-index: 2;
+			}
+
+			h3 {
+				margin: 0;
+				font-weight: 500;
+				@include clamp(font-size, 30, 21);
+				@include clamp(letter-spacing, -0.75, -0.3);
+				position: relative;
+				z-index: 2;
+			}
+		}
+
+		&-text {
+			@include clamp(font-size, 16, 13);
+			color: rgba($white, .63);
+			font-family: $font-secondary;
+			margin-top: 12px;
+		}
+	}
+}

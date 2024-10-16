@@ -1,0 +1,114 @@
+html, body {
+	font-family: $base-font;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-family: $base-font;
+}
+
+h1 {
+	font: 400 rem-calc(48) #{'/'} rem-calc(54) $base-font;
+
+	@include breakpoint(small only) {
+		font-size: rem-calc(42);
+		line-height: rem-calc(39);
+	}
+}
+
+h2 {
+	font: 400 rem-calc(36) #{'/'} rem-calc(42) $base-font;
+}
+
+.inner h2 {
+	color: $slate;
+}
+
+h3 {
+	font: 400 rem-calc(27) #{'/'} rem-calc(33) $base-font;
+}
+
+h4 {
+	font: 400 rem-calc(21) #{'/'} rem-calc(27) $base-font;
+}
+
+h5 {
+	font: 700 rem-calc(15) #{'/'} rem-calc(27) $base-font-condensed;
+	text-transform: uppercase;
+	letter-spacing: rem-calc(1);
+}
+
+a {
+	transition: color 0.3s;
+}
+
+.large {
+	font: 400 rem-calc(18) #{'/'} rem-calc(27) $base-font !important;
+}
+
+.small {
+	font: 400 rem-calc(15) #{'/'} rem-calc(27) $base-font !important;
+	margin-bottom: 2rem;
+}
+
+.lede {
+	font: 400 rem-calc(21) #{'/'} rem-calc(33) $base-font !important;
+
+	@include breakpoint(small only) {
+		font-size: rem-calc(15);
+		line-height: rem-calc(27);
+	}
+}
+
+.main-content p, .main-content li {
+}
+
+.main-content li {
+	margin-bottom: 1rem;
+}
+
+// ol li, ul li {
+// 	list-style-type: decimal;
+// 	font: 400 rem-calc(15) #{'/'} rem-calc(27) $base-font;
+// 	margin-bottom: rem-calc(21);
+// }
+
+.main-content blockquote {
+	font: 400 rem-calc(27) #{'/'} rem-calc(33) $base-font;
+	border-left: none;
+	padding-left: 0;
+}
+
+hr {
+	height: 0;
+	border-top: rem-calc(2) solid #c0c2c3;
+	margin: rem-calc(50) 0;
+	border-top-color: $middle-gray;
+	border-bottom-color: $middle-gray;
+}
+
+.inner h1 {
+	font-weight: normal;
+	color: #ab0e1e;
+}
+
+.main-content a {
+	color: #ab0e1e;
+	text-decoration: underline;
+	transition: all 0.3s;
+
+	&:hover {
+		color: #a3aaa3;
+		text-decoration: none;
+	}
+}
+
+figcaption {
+	font-size: rem-calc(21);
+	line-height: rem-calc(33);
+	font-style: italic;
+
+	strong {
+		font-style: normal;
+	}
+}

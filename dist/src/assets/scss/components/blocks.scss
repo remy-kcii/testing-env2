@@ -1,0 +1,1104 @@
+.section-blocks {
+	position: relative;
+	@include clamp(padding-top, 80);
+	@include clamp(padding-bottom, 80);
+
+	&.light {
+		background-color: $light-gray-alt!important;
+	}
+
+	.grid-x {
+		margin-left: -7.5px;
+		margin-right: -7.5px;
+
+		> .cell {
+			padding: 7.5px;
+		}
+	}
+
+	.button-link {
+		@include clamp(font-size, 16, 13);
+	}
+
+	.image {
+		display: block;
+	}
+}
+
+.section-blocks1 {
+	.item {
+		background: $white;
+
+		.image {
+			position: relative;
+
+			.img-bg {
+				@include clamp(height, 240, 180);
+			}
+
+			&:after {
+				content: '';
+				width: 27px;
+				height: 50px;
+				background: $red-alt3;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				z-index: 2;
+				-webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+				clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+			}
+		}
+
+		.text {
+			position: relative;
+			@include clamp(padding-top, 25, 20);
+			@include clamp(padding-bottom, 25, 20);
+			@include clamp(padding-left, 45, 25);
+			@include clamp(padding-right, 45, 25);
+			font-family: $font-secondary;
+			color: rgba($dark-alt, .75);
+			overflow: hidden;
+
+			&:before {
+				content: '';
+				position: absolute;
+				right: 0;
+				top: -50px;
+				width: 153px;
+				height: 285px;
+				z-index: 1;
+				opacity: 0.1;
+				background: linear-gradient(to bottom,  rgba(34,105,149,1) 0%,rgba(34,105,149,0) 100%);
+				-webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+				clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+			}
+
+			&-body {
+				position: relative;
+				z-index: 2;
+			}
+
+			h3 {
+				margin: 0 0 0.7em;
+				font-weight: 500;
+				color: $blue-dark-alt2;
+				@include clamp(font-size, 28, 24);
+				font-family: $font-primary;
+			}
+		}
+	}
+
+	.large-3 {
+		.item {
+			.image {
+				.img-bg {
+					@include clamp(height, 200, 180);
+				}
+			}
+		}
+	}
+}
+
+.section-blocks2 {
+	.cell.large-7 {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+
+		&-featured {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+
+			.image {
+				flex: 1;
+				position: relative;
+
+				@include breakpoint(medium down) {
+					padding-bottom: 60%;
+				}
+
+				.img-bg {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.text {
+				@include clamp(padding-top, 50, 20);
+				@include clamp(padding-bottom, 50, 20);
+				@include clamp(padding-left, 72, 25);
+				@include clamp(padding-right, 72, 25);
+
+				@include breakpoint(medium up) {
+					display: flex;
+				}
+
+				h3 {
+					margin: 0 0 0.4em;
+					font-weight: 400;
+					color: $blue-dark;
+					@include clamp(font-size, 60, 30);
+					@include clamp(letter-spacing, -2);
+					font-family: $font-primary;
+					line-height: 1;
+					flex: 1;
+				}
+
+				&-body {
+					font-family: $font-secondary;
+
+					@include breakpoint(medium up) {
+						flex: 0 0 48%;
+						margin-left: 20px;
+					}
+				}
+			}
+		}
+		
+		&:not(.item-featured) {
+
+			@include breakpoint(medium up) {
+				display: flex;
+				align-items: center;
+			}
+
+			+ .item {
+				margin-top: 15px;
+			}
+
+			.text {
+				flex: 1;
+				@include clamp(padding, 30, 20);
+
+				h3 {
+					color: $dark-alt;
+					margin: 0;
+					font-weight: 500;
+					@include clamp(font-size, 22, 18);
+					font-family: $font-secondary;
+					line-height: 1.1;
+					display: -webkit-box; 
+		            -webkit-box-orient: vertical; 
+		            -webkit-line-clamp: 3; 
+		            overflow: hidden; 
+		            text-overflow: ellipsis; 
+
+					a {
+						text-decoration: none;
+						color: inherit;
+
+						&:hover {
+							color: $red-alt3;
+						}
+					}
+				}
+
+				p {
+					font-weight: 600;
+					text-transform: uppercase;
+					color: $red-alt3;
+					margin: 10px 0 0;
+				}
+			}
+
+			.image {
+				position: relative;
+				order: 2;
+				flex-grow: 0;
+				flex-shrink: 0;
+				@include clamp(flex-basis, 175, 150);
+
+				.img-bg {
+					padding-bottom: 100%;
+
+					@include breakpoint(small only) {
+						padding-bottom: 60%;
+					}
+				}
+			}
+		}
+	}
+}
+
+.section-blocks4 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+
+		&-featured {
+			flex-grow: 1;
+
+			@include breakpoint(medium up) {
+				display: flex;
+			}
+
+			.image {
+				flex: 1;
+				position: relative;
+
+				@include breakpoint(small only) {
+					padding-bottom: 60%;
+				}
+
+				.img-bg {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.text {
+				@include clamp(padding, 40, 25);
+				flex: 0 0 50%;
+				align-self: center;
+
+				h3 {
+					margin: 0 0 0.4em;
+					font-weight: 400;
+					color: $blue-dark;
+					@include clamp(font-size, 42, 26);
+					@include clamp(letter-spacing, -1.5);
+					font-family: $font-primary;
+					line-height: 1;
+					flex: 1;
+				}
+
+				&-body {
+					font-family: $font-secondary;
+				}
+			}
+		}
+		
+		&:not(.item-featured) {
+
+			@include breakpoint(medium up) {
+				display: flex;
+				align-items: center;
+			}
+
+			+ .item {
+				margin-top: 15px;
+			}
+
+			.text {
+				flex: 1;
+				@include clamp(padding-top, 20, 15);
+				@include clamp(padding-bottom, 20, 15);
+				@include clamp(padding-left, 48, 20);
+				@include clamp(padding-right, 48, 20);
+				font-family: $font-secondary;
+
+				h3 {
+					margin: 0 0 0.5em;
+					font-weight: 500;
+					color: $blue-dark-alt2;
+					@include clamp(font-size, 28, 24);
+					font-family: $font-primary;
+				}
+
+				p {
+					margin-bottom: 15px;
+				}
+			}
+
+			.image {
+				position: relative;
+				flex: 0 0 50%;
+
+				.img-bg {
+					height: 270px;
+
+					@include breakpoint (small only) {
+						height: 210px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.section-blocks5 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+
+		&-featured {
+			flex-grow: 1;
+
+			@include breakpoint(medium up) {
+				display: flex;
+			}
+
+			.image {
+				flex: 1;
+				position: relative;
+
+				@include breakpoint (medium up) {
+					order: 2;
+				}
+
+				@include breakpoint(small only) {
+					padding-bottom: 60%;
+				}
+
+				.img-bg {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.text {
+				@include clamp(padding, 40, 25);
+				flex: 0 0 38%;
+				align-self: center;
+
+				h3 {
+					margin: 0 0 0.4em;
+					font-weight: 400;
+					color: $blue-dark;
+					@include clamp(font-size, 42, 26);
+					@include clamp(letter-spacing, -1.5);
+					font-family: $font-primary;
+					line-height: 1;
+					flex: 1;
+				}
+
+				&-body {
+					font-family: $font-secondary;
+				}
+			}
+		}
+		
+		&:not(.item-featured) {
+
+			+ .item {
+				margin-top: 15px;
+			}
+
+			.text {
+				flex: 1;
+				@include clamp(padding-top, 20, 15);
+				@include clamp(padding-bottom, 20, 15);
+				@include clamp(padding-left, 48, 20);
+				@include clamp(padding-right, 48, 20);
+				font-family: $font-secondary;
+
+				h3 {
+					margin: 0 0 0.5em;
+					font-weight: 500;
+					color: $blue-dark-alt2;
+					@include clamp(font-size, 28, 24);
+					font-family: $font-primary;
+				}
+
+				p {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+}
+
+.section-blocks6 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+
+		&-featured {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			.image {
+				flex: 1;
+				position: relative;
+
+				@include breakpoint(small only) {
+					padding-bottom: 60%;
+				}
+
+				.img-bg {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.text {
+				@include clamp(padding, 40, 25);
+				@include clamp(font-size, 20, 14);
+
+				h3 {
+					margin: 0 0 0.4em;
+					font-weight: 400;
+					color: $blue-dark;
+					@include clamp(font-size, 60, 30);
+					@include clamp(letter-spacing, -2);
+					font-family: $font-primary;
+					line-height: 1;
+					flex: 1;
+				}
+
+				&-body {
+					font-family: $font-secondary;
+				}
+			}
+		}
+		
+		&:not(.item-featured) {
+			flex-grow: 1;
+
+			.text {
+				flex: 1;
+				@include clamp(padding-top, 30, 20);
+				@include clamp(padding-bottom, 30, 20);
+				@include clamp(padding-left, 38, 20);
+				@include clamp(padding-right, 38, 20);
+				font-family: $font-secondary;
+
+				h3 {
+					margin: 0 0 0.5em;
+					font-weight: 500;
+					color: $blue-dark-alt2;
+					@include clamp(font-size, 36, 24);
+					font-family: $font-primary;
+				}
+
+				p {
+					margin-bottom: 15px;
+				}
+			}
+
+			.image {
+				position: relative;
+
+				.img-bg {
+					height: 250px;
+				}
+			}
+		}
+	}
+}
+
+.section-blocks7 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+
+		&-featured {
+			flex-grow: 1;
+
+			@include breakpoint(medium up) {
+				display: flex;
+			}
+
+			.image {
+				flex: 1;
+				position: relative;
+
+				@include breakpoint(small only) {
+					padding-bottom: 60%;
+				}
+
+				.img-bg {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.text {
+				@include clamp(padding, 40, 25);
+				flex: 0 0 40%;
+				align-self: center;
+
+				h3 {
+					margin: 0 0 0.4em;
+					font-weight: 400;
+					color: $blue-dark;
+					@include clamp(font-size, 42, 26);
+					@include clamp(letter-spacing, -1.5);
+					font-family: $font-primary;
+					line-height: 1;
+					flex: 1;
+				}
+
+				&-body {
+					font-family: $font-secondary;
+				}
+			}
+		}
+		
+		&:not(.item-featured) {
+
+			@include breakpoint(medium up) {
+				display: flex;
+				align-items: center;
+			}
+
+			+ .item {
+				margin-top: 15px;
+			}
+
+			.text {
+				flex: 1;
+				@include clamp(padding-top, 20, 15);
+				@include clamp(padding-bottom, 20, 15);
+				@include clamp(padding-left, 42, 20);
+				@include clamp(padding-right, 42, 20);
+				font-family: $font-secondary;
+
+				h3 {
+					margin: 0 0 0.5em;
+					font-weight: 500;
+					color: $blue-dark-alt2;
+					@include clamp(font-size, 28, 24);
+					font-family: $font-primary;
+				}
+
+				p {
+					margin-bottom: 15px;
+				}
+			}
+
+			.image {
+				position: relative;
+				flex: 0 0 35%;
+
+				.img-bg {
+					height: 270px;
+
+					@include breakpoint (small only) {
+						height: 210px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.section-blocks8 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+		flex-grow: 1;
+
+		@include breakpoint(medium up) {
+			display: flex;
+		}
+
+		.text {
+			flex: 1;
+			align-self: center;
+			@include clamp(padding-top, 30, 20);
+			@include clamp(padding-bottom, 30, 20);
+			@include clamp(padding-left, 38, 20);
+			@include clamp(padding-right, 38, 20);
+			font-family: $font-secondary;
+
+			h3 {
+				margin: 0 0 0.7em;
+				font-weight: 500;
+				color: $blue-dark-alt2;
+				@include clamp(font-size, 28, 24);
+				font-family: $font-primary;
+			}
+
+			p {
+				margin-bottom: 15px;
+			}
+		}
+
+		.image {
+			position: relative;
+			flex: 0 0 48%;
+
+			@include breakpoint (small only) {
+				height: 210px;
+			}
+
+			.img-bg {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+.section-blocks9 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+		@include breakpoint(medium up) {
+			display: flex;
+			align-items: center;
+		}
+
+		+ .item {
+			margin-top: 15px;
+		}
+
+		.text {
+			flex: 1;
+			@include clamp(padding-top, 20, 15);
+			@include clamp(padding-bottom, 20, 15);
+			@include clamp(padding-left, 48, 20);
+			@include clamp(padding-right, 48, 20);
+			font-family: $font-secondary;
+
+			h3 {
+				margin: 0 0 0.5em;
+				font-weight: 500;
+				color: $blue-dark-alt2;
+				@include clamp(font-size, 28, 24);
+				font-family: $font-primary;
+			}
+
+			p {
+				margin-bottom: 15px;
+			}
+		}
+
+		.image {
+			position: relative;
+			flex: 0 0 48%;
+
+			.img-bg {
+				@include clamp(height, 295, 260);
+
+				@include breakpoint (small only) {
+					height: 210px;
+				}
+			}
+		}
+	}
+}
+
+.section-blocks10 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+
+		&-featured {
+			flex-grow: 1;
+
+			@include breakpoint(medium up) {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.image {
+				flex: 1;
+				position: relative;
+
+				@include breakpoint(small only) {
+					padding-bottom: 60%;
+				}
+
+				.img-bg {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.text {
+				@include clamp(padding, 40, 25);
+				@include clamp(font-size, 20, 14);
+				flex: 0 0 50%;
+				align-self: center;
+
+				h3 {
+					margin: 0 0 0.4em;
+					font-weight: 500;
+					color: $blue-dark;
+					@include clamp(font-size, 54, 30);
+					@include clamp(letter-spacing, -2);
+					font-family: $font-primary;
+					line-height: 1;
+					flex: 1;
+				}
+
+				&-body {
+					font-family: $font-secondary;
+				}
+			}
+		}
+		
+		&:not(.item-featured) {
+
+			@include breakpoint(medium up) {
+				display: flex;
+				align-items: center;
+			}
+
+			+ .item {
+				margin-top: 15px;
+			}
+
+			.text {
+				flex: 1;
+				@include clamp(padding-top, 15, 15);
+				@include clamp(padding-bottom, 15, 15);
+				@include clamp(padding-left, 34, 20);
+				@include clamp(padding-right, 34, 20);
+				font-family: $font-secondary;
+
+				h3 {
+					margin: 0 0 0.5em;
+					font-weight: 500;
+					color: $blue-dark-alt2;
+					@include clamp(font-size, 28, 24);
+					font-family: $font-primary;
+				}
+
+				p {
+					margin-bottom: 15px;
+				}
+			}
+
+			.image {
+				position: relative;
+				flex: 0 0 35%;
+				order: 2;
+
+				.img-bg {
+					height: 220px;
+
+					@include breakpoint (small only) {
+						height: 210px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.section-blocks11 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+		@include breakpoint(medium up) {
+			display: flex;
+			align-items: center;
+		}
+
+		+ .item {
+			margin-top: 15px;
+		}
+
+		.text {
+			flex: 1;
+			@include clamp(padding-top, 20, 15);
+			@include clamp(padding-bottom, 20, 15);
+			@include clamp(padding-left, 48, 20);
+			@include clamp(padding-right, 48, 20);
+			font-family: $font-secondary;
+
+			h3 {
+				margin: 0 0 0.5em;
+				font-weight: 500;
+				color: $blue-dark-alt2;
+				@include clamp(font-size, 28, 24);
+				font-family: $font-primary;
+			}
+
+			p {
+				margin-bottom: 15px;
+			}
+		}
+
+		.image {
+			position: relative;
+			flex: 0 0 32%;
+
+			.img-bg {
+				@include clamp(height, 260, 220);
+
+				@include breakpoint (small only) {
+					height: 210px;
+				}
+			}
+		}
+	}
+}
+
+.section-blocks12 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item {
+		background: $white;
+
+		&-featured {
+			flex-grow: 1;
+
+			@include breakpoint(medium up) {
+				display: flex;
+			}
+
+			.image {
+				flex: 1;
+				position: relative;
+
+				@include breakpoint(small only) {
+					padding-bottom: 60%;
+				}
+
+				.img-bg {
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.text {
+				@include clamp(padding, 40, 25);
+				@include clamp(font-size, 20, 14);
+				flex: 0 0 50%;
+				align-self: center;
+
+				h3 {
+					margin: 0 0 0.4em;
+					font-weight: 500;
+					color: $blue-dark;
+					@include clamp(font-size, 60, 30);
+					@include clamp(letter-spacing, -2);
+					font-family: $font-primary;
+					line-height: 1;
+					flex: 1;
+				}
+
+				&-body {
+					font-family: $font-secondary;
+				}
+			}
+		}
+		
+		&:not(.item-featured) {
+
+			@include breakpoint(medium up) {
+				display: flex;
+				align-items: center;
+			}
+
+			+ .item {
+				margin-top: 15px;
+			}
+
+			.text {
+				flex: 1;
+				@include clamp(padding-top, 15, 15);
+				@include clamp(padding-bottom, 15, 15);
+				@include clamp(padding-left, 34, 20);
+				@include clamp(padding-right, 34, 20);
+				font-family: $font-secondary;
+
+				h3 {
+					margin: 0 0 0.5em;
+					font-weight: 500;
+					color: $blue-dark-alt2;
+					@include clamp(font-size, 28, 24);
+					font-family: $font-primary;
+				}
+
+				p {
+					margin-bottom: 15px;
+				}
+			}
+
+			.image {
+				position: relative;
+				flex: 0 0 40%;
+
+				.img-bg {
+					height: 220px;
+
+					@include breakpoint (small only) {
+						height: 210px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.section-blocks13 {
+	.cell {
+		display: flex;
+		flex-direction: column;
+
+		&:nth-child(3),
+		&:nth-child(4) {
+			.item {
+				.image {
+					order: 2;
+				}
+			}
+		}
+	}
+
+	.item {
+		background: $white;
+		@include breakpoint(medium up) {
+			display: flex;
+			align-items: center;
+		}
+
+		+ .item {
+			margin-top: 15px;
+		}
+
+		.text {
+			flex: 1;
+			@include clamp(padding-top, 20, 15);
+			@include clamp(padding-bottom, 20, 15);
+			@include clamp(padding-left, 48, 20);
+			@include clamp(padding-right, 48, 20);
+			font-family: $font-secondary;
+
+			h3 {
+				margin: 0 0 0.5em;
+				font-weight: 500;
+				color: $blue-dark-alt2;
+				@include clamp(font-size, 28, 24);
+				font-family: $font-primary;
+			}
+
+			p {
+				margin-bottom: 15px;
+			}
+		}
+
+		.image {
+			position: relative;
+			flex: 0 0 32%;
+
+			.img-bg {
+				@include clamp(height, 260, 220);
+
+				@include breakpoint (small only) {
+					height: 210px;
+				}
+			}
+		}
+	}
+}
+
+.section-blocks14 {
+	background-color: $light-gray-alt;
+	@include clamp(padding-top, 80, 50);
+	@include clamp(padding-bottom, 80, 50);
+
+	.item {
+		@include breakpoint(medium up) {
+			padding-right: 25px;
+		}
+
+		.text {
+			font-family: $font-secondary;
+
+			h3 {
+				margin: 0 0 10px;
+				color: $blue-dark-alt;
+				@include clamp(font-size, 24, 21);
+			}
+		}
+	}
+
+	+ .section-blocks16 {
+		padding-top: 0;
+	}
+}
+
+.section-blocks15 {
+	background-color: $light-gray-alt;
+	@include clamp(padding-top, 80, 50);
+	@include clamp(padding-bottom, 80, 50);
+
+	.item {
+		@include breakpoint(medium up) {
+			@include clamp(padding-right, 35, 20);
+		}
+
+		.text {
+			font-family: $font-secondary;
+			
+			h3 {
+				margin: 0 0 15px;
+				@include clamp(font-size, 36, 26);
+				color: $blue-dark-alt;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+.section-blocks16 {
+	background-color: $light-gray-alt;
+	@include clamp(padding-top, 80, 50);
+	@include clamp(padding-bottom, 80, 50);
+
+	+ .section-blocks15 {
+		padding-top: 0;
+	}
+}
